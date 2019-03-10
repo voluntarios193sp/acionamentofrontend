@@ -28,3 +28,30 @@ body {
   .option-image{
     width: 100%; 
   }
+
+.navbar-brand{
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.navbar-default{
+  padding-top: 20px;  
+  padding-bottom: 20px; 
+  position: relative; 
+}
+
+  .img-logo{
+    height: 50px; 
+    margin-left: 15px;
+  }
+
+  .titulo-bombeiro{
+    position: absolute; 
+    margin: auto; 
+    top: 0; 
+    text-align: center; 
+    left: 25%; 
+    top: 20%; 
+    font-weight: bold; 
+  }

@@ -22,7 +22,7 @@ function obterLocalizacao(location) {
         telefone_solicitante : document.frmOcorrencia.telefone.value,
         nome_solicitante : "COBOM averiguar",
         cpf_solicitante : "COBOM averiguar",
-        natureza : obtemTipoOcorrencia(),
+        natureza : document.referrer,
         descricao : document.frmOcorrencia.detalhes.value
     };
     console.log("dados a serem enviados ", JSON.stringify(dado));
@@ -39,20 +39,12 @@ function obterLocalizacao(location) {
             alert("Houve um problema na comunicação. Por favor ligue 193");
         }
     });
-    
+
 }
 
-function sucesso(data) {
-    console.log("retorno: ", data);
-    //document.location. = "registrado.html";
+function sucesso(data, status) {
+    console.log("retorno: ", data, status);
+    document.location.href = "registrado.html";
 }
 
-function obtemTipoOcorrencia() {
-    let inicial, final
-    if (window.history.length>=2) {
-        inicial = window.history.go(-2);
-        final = window.history.go(-1);
-    }
-    return inicial + "," + final;
-}
 

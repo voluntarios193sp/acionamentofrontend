@@ -4,5 +4,27 @@ body {
   }
   
   .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+  }
+
+  .desc-warning div {
+    padding: 5px;
+    background: #eee; 
+  }
+
+  .desc-warning{
+    margin-top: 10px;
+    margin-bottom: 10px; 
+  }
+
+  .desc-warning h5{
+    font-weight: bold; 
+  }
+
+  .option{
+    margin-bottom: 10px;
+  }
+
+  .option-image{
+    max-width: 100%; 
   }

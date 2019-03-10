@@ -15,16 +15,17 @@ function obterLocalizacao(location) {
     latitude = location.coords.latitude;
     longitude = location.coords.longitude;
     let dateObj = new Date();
-    let dado;
-    dado.data_ocorrencia = dateObj.getUTCFullYear() + "-" + (dateObj.getUTCMonth() + 1) + "-" + dateObj.getUTCDate();
-    dado.longitude = location.coords.longitude;
-    dado.latitude = location.coords.latitude;
-    dado.telefone_solicitante = document.frmOcorrencia.telefone.value;
-    dado.nome_solicitante = "COBOM averiguar";
-    dado.cpf_solicitante = "COBOM averiguar";
-    dado.natureza = "incendio,casa";
-    dado.descricao = document.frmOcorrencia.detalhes.value;
-
+    let dado = {
+        data_ocorrencia : dateObj.getUTCFullYear() + "-" + (dateObj.getUTCMonth() + 1) + "-" + dateObj.getUTCDate(),
+        longitude : location.coords.longitude,
+        latitude : location.coords.latitude,
+        telefone_solicitante : document.frmOcorrencia.telefone.value,
+        nome_solicitante : "COBOM averiguar",
+        cpf_solicitante : "COBOM averiguar",
+        natureza : obtemTipoOcorrencia(),
+        descricao : document.frmOcorrencia.detalhes.value
+    };
+    console.log("dados a serem enviados ", JSON.stringify(dado));
     $.ajax({
         type: "POST",
         url: "https://www.novatrix.com.br/cobomocorrencias/ocorrencia",
@@ -42,6 +43,15 @@ function obterLocalizacao(location) {
 
 function sucesso(data) {
     console.log("retorno: ", data);
-    document.location = "registrado.html";
+    //document.location. = "registrado.html";
+}
+
+function obtemTipoOcorrencia() {
+    let inicial, final
+    if (window.history.length>=2) {
+        inicial = window.history.go(-2);
+        final = window.history.go(-1);
+    }
+    return inicial + "," + final;
 }
 

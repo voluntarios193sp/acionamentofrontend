@@ -39,6 +39,7 @@ function obterLocalizacao(location) {
             alert("Houve um problema na comunicação. Por favor ligue 193");
         }
     });
+    
 }
 
 function sucesso(data) {

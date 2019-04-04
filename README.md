@@ -1,5 +1,3 @@
-# SARBrasil
-Modal Web para abertura de ocorrências
+# Pagina HTML para acionamento de ocorrências
 
-## Membros
-Jeff Prestes, Tomaz Barreiros, Rogerio Rodrigues, Renzo Palmieri
+Modal Web para abertura de ocorrências
